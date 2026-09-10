@@ -1,0 +1,81 @@
+/* Personal Resume stylesheet — AutoTempl (generated 2026-08-22 11:01:32) */
+:root {
+    --primary-color: #3ddbb4;
+    --secondary-color: #7ef0d2;
+    --bg-color: #0f1613;
+    --text-color: #e8f2ee;
+    --on-primary-color: #111111;
+    --on-secondary-color: #111111;
+    --on-gradient-color: #111111;
+    --surface-color: #252c29;
+    --on-surface-color: #ffffff;
+    --tint-color: #28413a;
+    --on-tint-color: #3ddbb4;
+    --panel-color: #3f4643;
+    --on-panel-color: #ffffff;
+    --border-color: #2d3532;
+    --muted-color: #a3aca8;
+    --heading-from-color: #3ddbb4;
+    --heading-to-color: #7ef0d2;
+    --link-color: #3ddbb4;
+    --link-alt-color: #7ef0d2;
+    --hero-wash-color: #15322a;
+    --max-width: 1200px;
+    --border-radius: 10px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif, system-ui, sans-serif; margin: 0; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+a { color: var(--link-color); text-decoration: none; }
+a:hover { color: var(--link-alt-color); }
+img { max-width: 100%; display: block; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.25rem; }
+
+.header { padding: 1rem 0; background: var(--surface-color); border-bottom: 1px solid #e2e8f0; position: relative; }
+.header .container { display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 1.4rem; font-weight: 800; color: var(--text-color); }
+.logo span { color: var(--link-color); }
+.menu-toggle { display: none; background: none; border: 0; font-size: 1.5rem; cursor: pointer; color: var(--text-color); }
+.nav { display: flex; gap: 1.5rem; }
+.nav-item { color: var(--text-color); font-weight: 600; opacity: 0.85; }
+.nav-item:hover { opacity: 1; color: var(--link-color); }
+.footer { padding: 2.5rem 0; text-align: center; font-size: 0.9rem; color: var(--muted-color); border-top: 1px solid #e2e8f0; }
+.footer .links { margin-top: 0.75rem; }
+.social-link { display: inline-block; margin: 0 0.5rem; color: var(--muted-color); }
+.social-link:hover { color: var(--link-color); }
+
+.btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: var(--border-radius); background: var(--primary-color); color: var(--on-primary-color); font-weight: 700; border: 0; cursor: pointer; }
+.btn:hover { background: var(--secondary-color); color: var(--on-secondary-color); }
+
+.hero { display: grid; grid-template-columns: 1fr 200px; gap: 2.5rem; align-items: center; padding: 4rem 0; }
+.hero .tagline { color: var(--link-color); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0; }
+.hero p { color: var(--muted-color); max-width: 520px; }
+.hero .photo { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); }
+
+section { padding: 3rem 0; }
+.section-head { margin-bottom: 1.75rem; }
+.section-head h2 { font-size: 1.7rem; margin: 0 0 0.3rem; color: var(--link-color); border-left: 4px solid var(--primary-color); padding-left: 0.75rem; }
+
+.timeline { display: grid; gap: 1.25rem; }
+.job { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; }
+.job .period { font-weight: 700; color: var(--link-color); }
+.job h3 { margin: 0 0 0.25rem; }
+.job p { margin: 0; color: var(--muted-color); }
+
+.skills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.skill { padding: 0.4rem 0.9rem; border-radius: 999px; background: rgba(8,145,178,0.1); color: var(--primary-color); font-weight: 600; font-size: 0.85rem; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.card { background: var(--surface-color); border: 1px solid #e2e8f0; border-radius: var(--border-radius); padding: 1.5rem; }
+.card h3 { margin: 0 0 0.4rem; color: var(--link-color); }
+.card p { margin: 0; color: var(--muted-color); }
+
+@media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero .photo { margin: 0 auto; }
+    .job { grid-template-columns: 1fr; }
+    .menu-toggle { display: block; }
+    .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--surface-color); padding: 1rem; gap: 0.75rem; border-bottom: 1px solid #e2e8f0; }
+    .nav.active { display: flex; }
+}

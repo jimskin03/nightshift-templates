@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14448f"/>
+      <stop offset="1" stop-color="#9f6707"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dee5ef"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <rect x="0" y="618" width="1200" height="12" fill="url(#mark)"/>
+  <rect x="80" y="72" width="88" height="88" rx="20" fill="url(#mark)"/>
+  <text x="124" y="116" dy="0.35em" text-anchor="middle" fill="#ffffff"
+        font-family="&#x27;Barlow Condensed&#x27;, Arial Narrow, sans-serif" font-size="38" font-weight="700">CP</text>
+  <text x="196" y="116" dy="0.34em" fill="#1e293b" font-family="&#x27;Barlow Condensed&#x27;, Arial Narrow, sans-serif"
+        font-size="34" font-weight="700">Calloway Plumbing</text>
+  <text x="80" y="212" fill="#666d7a" font-family="&#x27;Barlow Condensed&#x27;, Arial Narrow, sans-serif" font-size="24"
+        font-weight="600" letter-spacing="0.14em">TRADES / PLUMBER, ELECTRICIAN, BUILDER</text>
+  <text fill="#1e293b" font-family="&#x27;Barlow Condensed&#x27;, Arial Narrow, sans-serif" font-size="56" font-weight="700"
+        letter-spacing="-0.02em">
+    <tspan x="80" y="267.0">Fixed today, or we tell you</tspan>
+    <tspan x="80" y="333.0">why not</tspan>
+  </text>
+</svg>

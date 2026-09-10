@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#be6590"/>
+      <stop offset="1" stop-color="#d98ca8"/>
+    </linearGradient>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e5e9"/>
+      <stop offset="1" stop-color="#fffaf7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#wash)"/>
+  <rect x="0" y="618" width="1200" height="12" fill="url(#mark)"/>
+  <rect x="80" y="72" width="88" height="88" rx="20" fill="url(#mark)"/>
+  <text x="124" y="116" dy="0.35em" text-anchor="middle" fill="#111111"
+        font-family="&#x27;Fraunces&#x27;, Georgia, serif" font-size="38" font-weight="700">B</text>
+  <text x="196" y="116" dy="0.34em" fill="#3d2430" font-family="&#x27;Fraunces&#x27;, Georgia, serif"
+        font-size="34" font-weight="700">Bloom &amp; Co</text>
+  <text x="80" y="212" fill="#7b6870" font-family="&#x27;Fraunces&#x27;, Georgia, serif" font-size="24"
+        font-weight="600" letter-spacing="0.14em">FLORIST / FLOWER SHOP</text>
+  <text fill="#3d2430" font-family="&#x27;Fraunces&#x27;, Georgia, serif" font-size="56" font-weight="700"
+        letter-spacing="-0.02em">
+    <tspan x="80" y="267.0">Flowers, arranged the day you</tspan>
+    <tspan x="80" y="333.0">get them</tspan>
+  </text>
+</svg>

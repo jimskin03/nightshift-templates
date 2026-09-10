@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Calloway Plumbing logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14448f"/>
+      <stop offset="1" stop-color="#9f6707"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56.3" fill="url(#g)"/>
+  <text x="50%" y="50%" dy="0.35em" text-anchor="middle" fill="#ffffff"
+        font-family="&#x27;Barlow Condensed&#x27;, Arial Narrow, sans-serif" font-size="112.6"
+        font-weight="700" letter-spacing="-0.02em">CP</text>
+</svg>

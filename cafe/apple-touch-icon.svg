@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Kopi Lane logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8a4b26"/>
+      <stop offset="1" stop-color="#976838"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="39.6" fill="url(#g)"/>
+  <text x="50%" y="50%" dy="0.35em" text-anchor="middle" fill="#ffffff"
+        font-family="&#x27;Bricolage Grotesque&#x27;, Helvetica, sans-serif" font-size="79.2"
+        font-weight="700" letter-spacing="-0.02em">KL</text>
+</svg>
