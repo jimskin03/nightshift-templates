@@ -1,0 +1,33 @@
+{
+  "$schema": "https://nightshift.local/schema/template-manifest.v1.json",
+  "id": "cafe",
+  "name": "Cafe / Kopi Lane",
+  "version": 1,
+  "entry": "index.html",
+  "preview": "preview.html",
+  "fields": {
+    "brandName": { "type": "string", "label": "Cafe name", "maxLength": 60 },
+    "tagline": { "type": "string", "label": "Hero tagline", "maxLength": 160 },
+    "hours": { "type": "string", "label": "Opening hours", "maxLength": 80 },
+    "address": { "type": "string", "label": "Address", "maxLength": 120 },
+    "accent": { "type": "color", "label": "Accent colour" },
+    "menu": { "type": "array", "label": "Menu highlights", "minItems": 1, "maxItems": 6,
+      "items": { "type": "object", "required": ["name", "description"], "properties": {
+        "name": { "type": "string", "maxLength": 60 },
+        "description": { "type": "string", "maxLength": 140 }
+      }}
+    }
+  },
+  "defaults": {
+    "brandName": "Kopi Lane",
+    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
+    "hours": "7am–4pm daily. Last coffee at 3.45pm.",
+    "address": "22 Mill Road, city centre",
+    "accent": "#b85c38",
+    "menu": [
+      { "name": "Espresso & filter", "description": "A rotating single origin, pulled properly." },
+      { "name": "Bread & pastry", "description": "Baked in the back before the doors open." },
+      { "name": "All-day food", "description": "Toasties, soup, and the sausage rolls people queue for." }
+    ]
+  }
+}
