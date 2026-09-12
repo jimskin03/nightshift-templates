@@ -24,7 +24,19 @@
   function createAuthAdapter(options = {}) {
     const config = runtimeConfig();
     const request = options.fetchImpl || window.fetch.bind(window);
-    const headers = () => ({ apikey: config.publishableKey, Accept: 'application/json', 'Content-Type': 'application/json' });
+    const headers = () => {
+    const base = { apikey: config.publishableKey, Accept: 'application/json', 'Content-Type': 'application/json' };
+    const match = (typeof document !== 'undefined' && document.cookie) ? document.cookie.match(/sb-[a-z0-9]+-auth-token=([^;]+)/) : null;
+    if (match) {
+      try {
+        const session = JSON.parse(decodeURIComponent(match[1]));
+        if (session && session.access_token && session.expires_at * 1000 > Date.now()) {
+          base.Authorization = `Bearer ${session.access_token}`;
+        }
+      } catch (_) { /* unparseable session cookie; fall back to anonymous */ }
+    }
+    return base;
+  };
     const call = async (path, init = {}, label = 'Request') => {
       const response = await request(`${config.supabaseUrl}${path}`, {
         credentials: 'omit', ...init, headers: { ...headers(), ...(init.headers || {}) }
