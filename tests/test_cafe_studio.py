@@ -59,6 +59,7 @@ def test_renderer_has_bindings_and_validation():
 def test_controls_report_backend_pending():
     studio = (ROOT / 'cafe/studio.js').read_text()
     assert 'Backend configuration pending' in studio
-    assert 'localStorage' in studio
+    assert 'adapter.save' in studio
+    assert 'adapter.publish' in studio
     assert 'Publish is unavailable until backend configuration is applied' in studio
-    assert 'supabase' not in studio.lower() or 'no Supabase write' in studio
+    assert 'localStorage' not in studio
