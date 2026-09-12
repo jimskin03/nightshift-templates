@@ -26,6 +26,25 @@ def test_preview_protocol_is_origin_checked_and_isolated():
     assert "event.origin !== allowed" in script
     assert 'NIGHTSHIFT_PREVIEW_UPDATE' in script
     assert 'NIGHTSHIFT_PREVIEW_ACK' in script
+    assert 'event.source === window.parent' in script
+    assert 'latestRequestId' in script
+
+
+def test_studio_rejects_untrusted_and_stale_preview_messages():
+    script = (ROOT / 'cafe/studio.js').read_text()
+    assert 'event.source !== previewWindow()' in script
+    assert 'event.data.requestId !== latestAck' in script
+    assert 'latestAck = id' in script
+
+
+def test_manifest_is_loaded_as_the_runtime_contract():
+    loader = (ROOT / 'cafe/manifest.js').read_text()
+    studio = (ROOT / 'cafe/studio.js').read_text()
+    renderer = (ROOT / 'cafe/renderer.js').read_text()
+    assert 'nightshift.manifest.json' in loader
+    assert 'structuredClone(manifest.defaults)' in studio
+    assert 'manifest.fields' in studio
+    assert 'manifestReady' in renderer
 
 
 def test_renderer_has_bindings_and_validation():
