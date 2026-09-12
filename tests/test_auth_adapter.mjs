@@ -19,7 +19,7 @@ assert.equal((await adapter.listSites())[0].id, 'site-1');
 assert.equal(await adapter.remainingCreationsToday(), 4);
 assert.equal((await adapter.save('site-1', { brandName: 'Updated' })).id, 'site-1');
 assert.equal((await adapter.publish('site-1')).status, 'published');
-assert.equal(calls.every(call => call.options.credentials === 'include'), true);
+assert.equal(calls.every(call => call.options.credentials === 'omit'), true);
 assert.equal(calls[1].url.includes('/rest/v1/sites?select='), true);
 assert.equal(JSON.parse(calls[3].options.body).draft_data.brandName, 'Updated');
 assert.equal(JSON.parse(calls[4].options.body).p_site_id, 'site-1');

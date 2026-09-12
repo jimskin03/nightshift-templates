@@ -1,7 +1,7 @@
 /* Client-only Supabase browser-session adapter. Never add a service-role key here. */
 (() => {
   const DEFAULT_URL = 'https://vlnocfdiexkqcnfbjhqt.supabase.co';
-  const DEFAULT_PUBLISHABLE_KEY = 'sb_publishable_ys0Cl98LLqAdNEiNY1fMg_lddIzr6F';
+  const DEFAULT_PUBLISHABLE_KEY = 'sb_publishable_ys0Cl98LLqAdNEiNY1f7Mg_lddIzr6F';
   const API_ERROR = 'NIGHTSHIFT_API_ERROR';
 
   function runtimeConfig() {
@@ -27,7 +27,7 @@
     const headers = () => ({ apikey: config.publishableKey, Accept: 'application/json', 'Content-Type': 'application/json' });
     const call = async (path, init = {}, label = 'Request') => {
       const response = await request(`${config.supabaseUrl}${path}`, {
-        credentials: 'include', ...init, headers: { ...headers(), ...(init.headers || {}) }
+        credentials: 'omit', ...init, headers: { ...headers(), ...(init.headers || {}) }
       });
       if (!response.ok) throw await responseError(response, `${label} failed`);
       if (response.status === 204) return null;
@@ -36,7 +36,7 @@
     return Object.freeze({
       config: Object.freeze({ ...config }),
       async getSessionUser() {
-        const response = await request(`${config.supabaseUrl}/auth/v1/user`, { method: 'GET', credentials: 'include', headers: headers() });
+        const response = await request(`${config.supabaseUrl}/auth/v1/user`, { method: 'GET', credentials: 'omit', headers: headers() });
         if (response.status === 401 || response.status === 403) return null;
         if (!response.ok) throw await responseError(response, 'Session request failed');
         const user = await response.json(); return user && user.id ? user : null;
