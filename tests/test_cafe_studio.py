@@ -1,0 +1,45 @@
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).parents[1]
+
+
+def test_manifest_has_defaults_and_contract():
+    manifest = json.loads((ROOT / 'cafe/nightshift.manifest.json').read_text())
+    assert manifest['id'] == 'cafe'
+    assert manifest['entry'] == 'index.html'
+    assert manifest['preview'] == 'preview.html'
+    assert set(manifest['defaults']) == set(manifest['fields'])
+    assert 1 <= len(manifest['defaults']['menu']) <= 6
+
+
+def test_original_cafe_page_is_preserved():
+    page = (ROOT / 'cafe/index.html').read_text()
+    assert 'Kopi Lane' in page and 'assets/hero.png' in page
+    assert 'main.js' in page
+
+
+def test_preview_protocol_is_origin_checked_and_isolated():
+    studio = (ROOT / 'cafe/studio.html').read_text()
+    script = (ROOT / 'cafe/preview.js').read_text()
+    assert 'sandbox="allow-scripts allow-same-origin"' in studio
+    assert "event.origin !== allowed" in script
+    assert 'NIGHTSHIFT_PREVIEW_UPDATE' in script
+    assert 'NIGHTSHIFT_PREVIEW_ACK' in script
+
+
+def test_renderer_has_bindings_and_validation():
+    renderer = (ROOT / 'cafe/renderer.js').read_text()
+    preview = (ROOT / 'cafe/preview.html').read_text()
+    assert 'window.NightshiftCafe' in renderer
+    assert 'data-nightshift="brandName"' in preview
+    assert 'data-nightshift-list="menu"' in preview
+    assert 'maxLength' in renderer
+
+
+def test_controls_report_backend_pending():
+    studio = (ROOT / 'cafe/studio.js').read_text()
+    assert 'Backend configuration pending' in studio
+    assert 'localStorage' in studio
+    assert 'Publish is unavailable until backend configuration is applied' in studio
+    assert 'supabase' not in studio.lower() or 'no Supabase write' in studio
