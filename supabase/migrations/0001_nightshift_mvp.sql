@@ -92,6 +92,51 @@ drop policy if exists assets_owner_all on nightshift.assets;
 create policy assets_owner_all on nightshift.assets for all to authenticated using (owner_id = auth.uid()) with check (owner_id = auth.uid());
 -- No client policy is granted for site_creation_events: only the definer RPC writes it.
 
+-- Supabase default privileges only cover the `public` schema; without these
+-- grants, authenticated has zero table access and every RLS policy above is
+-- inert for client connections.
+grant select, update, delete on nightshift.sites to authenticated;
+grant select on nightshift.site_versions to authenticated;
+grant select, insert, update, delete on nightshift.assets to authenticated;
+
+create or replace function nightshift.prevent_direct_publish_field_change()
+returns trigger language plpgsql set search_path = pg_catalog, nightshift as $$
+begin
+  -- Publish-owned columns may only change via the publish_site RPC. The RPC
+  -- is security definer, so it does not run as the `authenticated` role;
+  -- direct client UPDATE statements do. Re-fire the same protection if the
+  -- publish path ever stops being definer-owned.
+  if current_user = 'authenticated' and (
+       new.status is distinct from old.status
+    or new.published_at is distinct from old.published_at
+    or new.published_data is distinct from old.published_data
+  ) then
+    raise exception 'published fields can only be changed through nightshift.publish_site'
+      using errcode = '42501';
+  end if;
+  return new;
+end; $$;
+
+drop trigger if exists sites_published_fields_protected on nightshift.sites;
+create trigger sites_published_fields_protected before update on nightshift.sites
+for each row execute function nightshift.prevent_direct_publish_field_change();
+
+create or replace function nightshift.validate_asset_site_ownership()
+returns trigger language plpgsql set search_path = pg_catalog, nightshift as $$
+declare v_owner uuid;
+begin
+  select owner_id into v_owner from nightshift.sites where id = new.site_id;
+  if v_owner is distinct from new.owner_id then
+    raise exception 'asset site_id must reference a site owned by the asset owner'
+      using errcode = '42501';
+  end if;
+  return new;
+end; $$;
+
+drop trigger if exists assets_site_ownership on nightshift.assets;
+create trigger assets_site_ownership before insert or update of site_id, owner_id on nightshift.assets
+for each row execute function nightshift.validate_asset_site_ownership();
+
 create or replace function nightshift.remaining_creations_today()
 returns integer language plpgsql stable security definer set search_path = pg_catalog, nightshift as $$
 declare v_user uuid := auth.uid(); v_used integer;
