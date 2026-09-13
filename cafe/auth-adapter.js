@@ -49,6 +49,14 @@
       if (response.status === 204) return null;
       return response.json();
     };
+    const setSessionCookie = session => {
+      if (typeof document === 'undefined' || !session) return;
+      const value = encodeURIComponent(JSON.stringify(session));
+      document.cookie = `sb-${config.supabaseUrl.split('//')[1].split('.')[0]}-auth-token=${value}; Domain=.cryptgregresearch.org; Path=/; Max-Age=${Math.max(0, (session.expires_at || 0) - Math.floor(Date.now() / 1000))}; Secure; SameSite=Lax`;
+    };
+    const clearSessionCookie = () => {
+      if (typeof document !== 'undefined') document.cookie = `sb-${config.supabaseUrl.split('//')[1].split('.')[0]}-auth-token=; Domain=.cryptgregresearch.org; Path=/; Max-Age=0; Secure; SameSite=Lax`;
+    };
     return Object.freeze({
       config: Object.freeze({ ...config }),
       async getSessionUser() {
@@ -76,6 +84,24 @@
         const rows = await call(`/rest/v1/sites?id=eq.${encodeURIComponent(siteId)}&template_slug=eq.cafe`, { method: 'PATCH', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ draft_data: draft }) }, 'Save draft');
         if (!rows[0]) { const error = new Error('Draft was not saved; site is missing or not owned by this account'); error.code = 'SITE_NOT_FOUND'; throw error; }
         return rows[0];
+      },
+      async deleteSite(siteId) {
+        return call(`/rest/v1/sites?id=eq.${encodeURIComponent(siteId)}&template_slug=eq.cafe`, { method: 'DELETE' }, 'Delete site');
+      },
+      async signUp(email, password) {
+        const response = await request(`${config.supabaseUrl}/auth/v1/signup`, { method: 'POST', credentials: 'omit', headers: { apikey: config.publishableKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+        if (!response.ok) throw await responseError(response, 'Sign up failed');
+        return response.json();
+      },
+      async signIn(email, password) {
+        const response = await request(`${config.supabaseUrl}/auth/v1/token?grant_type=password`, { method: 'POST', credentials: 'omit', headers: { apikey: config.publishableKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+        if (!response.ok) throw await responseError(response, 'Sign in failed');
+        const result = await response.json();
+        setSessionCookie(result);
+        return result;
+      },
+      async signOut() {
+        clearSessionCookie();
       },
       async publish(siteId) {
         const result = await call('/rest/v1/rpc/publish_site', { method: 'POST', body: JSON.stringify({ p_site_id: siteId }) }, 'Publish');
