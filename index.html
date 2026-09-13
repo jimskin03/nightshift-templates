@@ -494,6 +494,14 @@
             color: #fff;
             gap: 9px;
         }
+        .card.studio-card {
+            border: 1px solid rgba(251, 191, 36, 0.35);
+            background: linear-gradient(180deg, rgba(251, 191, 36, 0.06), rgba(251, 191, 36, 0.02));
+        }
+        .card.studio-card:hover {
+            border-color: rgba(251, 191, 36, 0.6);
+            box-shadow: 0 0 24px rgba(251, 191, 36, 0.15);
+        }
         .card .template-count {
             font-size: 12px;
             color: var(--muted);
@@ -612,7 +620,46 @@
                 </a>
 
                 <!-- Cafe -->
-                <a class="card" href="cafe/index.html" data-category="food" style="--card-glow: rgba(138, 75, 38, 0.4);">
+                <!-- Cafe Studio CTA -->
+                <a class="card studio-card" href="/cafe/studio.html" data-category="food" style="--card-glow: rgba(138, 75, 38, 0.4);">
+                    <div class="mockup-window">
+                        <div class="mockup-bar">
+                            <div class="mockup-dots">
+                                <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+                            </div>
+                            <span class="mockup-address">studio.nightshift</span>
+                        </div>
+                        <div class="mockup-screen" style="background: linear-gradient(135deg, #b45309 0%, #fbbf24 100%); color: #1c1917;">
+                            <div class="mockup-nav-ghost">
+                                <span class="mockup-brand">Live Studio</span>
+                                <div class="mockup-links"><span class="mockup-link-item"></span><span class="mockup-link-item"></span></div>
+                            </div>
+                            <div class="mockup-hero-ghost">
+                                <span class="mockup-badge">Authenticated</span>
+                                <div class="mockup-h1">Build your real cafe here.</div>
+                                <span class="mockup-btn-ghost"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header-row">
+                            <h3>Cafe Studio</h3>
+                            <span class="category-badge" style="background:rgba(251,191,36,.15);color:#fbbf24">LIVE</span>
+                        </div>
+                        <p>Sign in and launch your own cafe site — save drafts, publish, manage everything from one studio.</p>
+                        <div class="card-swatch-pills">
+                            <span class="card-swatch-pill">Your content, not a demo</span>
+                            <span class="card-swatch-pill">Publish when ready</span>
+                        </div>
+                        <div class="go-wrapper">
+                            <span class="go">Open Studio <span>→</span></span>
+                            <span class="template-count">Free to start</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cafe demo -->
+                <div class="card" data-category="food" style="--card-glow: rgba(138, 75, 38, 0.4);">
                     <div class="mockup-window">
                         <div class="mockup-bar">
                             <div class="mockup-dots">
@@ -643,11 +690,12 @@
                             <span class="card-swatch-pill">Artisanal Vibe</span>
                         </div>
                         <div class="go-wrapper">
-                            <span class="go">Explore demo <span>→</span></span>
+                            <a class="go" href="cafe/index.html">Explore demo <span>→</span></a>
+                            <a class="go" href="/cafe/studio.html" style="color:#fbbf24">Open Studio <span>→</span></a>
                             <span class="template-count">11 pages</span>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <!-- Barbershop -->
                 <a class="card" href="barber/index.html" data-category="services" style="--card-glow: rgba(31, 58, 95, 0.45);">
