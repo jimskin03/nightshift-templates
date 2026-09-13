@@ -14,7 +14,7 @@ python -m pytest -q tests
 ```
 
 3. Review `git diff`.
-4. Apply `supabase/migrations/0003_universal_templates.sql` through the same Supabase migration workflow used for the first two Nightshift migrations.
+4. Apply `supabase/migrations/0003_universal_templates.sql` and `supabase/migrations/0004_saved_site_limit.sql` through the same Supabase migration workflow used for the first two Nightshift migrations.
 5. Deploy the static site.
 6. Follow `MANUAL_TEST_CHECKLIST.md` for live authentication/RLS/quota checks.
 

@@ -59,7 +59,8 @@ def test_legacy_cafe_drafts_are_normalized_before_editing():
     assert "draft.address" in js and "draft.contactText" in js
 
 
-def test_quota_state_cannot_be_reenabled_by_generic_ui_state():
+def test_saved_site_state_cannot_be_reenabled_by_generic_ui_state():
     js = (ROOT / "studio/studio.js").read_text()
-    assert "remainingQuota" in js
-    assert "!state.user || state.remainingQuota === 0" in js
+    assert "remainingSiteSlots" in js
+    assert "!state.user || state.remainingSiteSlots === null || state.remainingSiteSlots === 0" in js
+    assert "saved sites used" in js

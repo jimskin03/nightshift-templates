@@ -9,7 +9,8 @@ const calls = [];
 const responses = [
   { status: 200, ok: true, json: async () => ({ id: 'user-1', email: 'owner@example.test' }) },
   { status: 200, ok: true, json: async () => ([{ id: 'site-1', name: 'Bloom', template_slug: 'florist' }]) },
-  { status: 200, ok: true, json: async () => ([{ id: 'site-2', remaining_today: 3 }]) },
+  { status: 200, ok: true, json: async () => ([{ remaining_site_slots: 4 }]) },
+  { status: 200, ok: true, json: async () => ([{ id: 'site-2', remaining_today: 4 }]) },
   { status: 200, ok: true, json: async () => ([{ id: 'site-1', draft_data: { brandName: 'Updated' } }]) },
   { status: 200, ok: true, json: async () => ([{ id: 'site-1', status: 'published' }]) },
   { status: 204, ok: true, json: async () => null }
@@ -19,6 +20,7 @@ const adapter = context.window.NightshiftAuthAdapter.create({ fetchImpl: async (
 } });
 assert.equal((await adapter.getSessionUser()).id, 'user-1');
 assert.equal((await adapter.listSites())[0].template_slug, 'florist');
+assert.equal(await adapter.remainingSiteSlots(), 4);
 assert.equal((await adapter.create('fitness', 'Iron Lab'))[0].id, 'site-2');
 assert.equal((await adapter.save('site-1', { brandName: 'Updated' })).id, 'site-1');
 assert.equal((await adapter.publish('site-1')).status, 'published');
