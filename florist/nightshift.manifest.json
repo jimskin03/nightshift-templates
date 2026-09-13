@@ -1,8 +1,8 @@
 {
   "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
-  "id": "cafe",
-  "name": "Cafe / Kopi Lane",
-  "description": "Warm hospitality template for cafes, bakeries and coffee shops.",
+  "id": "florist",
+  "name": "Florist / Bloom & Co",
+  "description": "Editorial florist template for bouquets, events and local flower shops.",
   "version": 2,
   "entry": "index.html",
   "editor": {
@@ -178,57 +178,57 @@
     }
   },
   "defaults": {
-    "brandName": "Kopi Lane",
-    "eyebrow": "Cafe · Coffee shop",
-    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
-    "primaryCta": "See the menu",
-    "secondaryCta": "Find us",
-    "featuresTitle": "On the bar today",
-    "featuresSubtitle": "Why people keep coming back.",
+    "brandName": "Bloom & Co",
+    "eyebrow": "Florist · Flower shop",
+    "tagline": "Seasonal stems from local growers, hand-tied and delivered across the city before noon.",
+    "primaryCta": "Order a bouquet",
+    "secondaryCta": "See this week's stems",
+    "featuresTitle": "This week's stems",
+    "featuresSubtitle": "What you get when you order from us.",
     "features": [
       {
-        "title": "Roasted weekly",
-        "description": "We pull from a rotating single origin and change it when the bag runs out, not on a schedule."
+        "title": "Cut this morning",
+        "description": "We buy at the market daily, so nothing in the shop is older than a day."
       },
       {
-        "title": "Baked here",
-        "description": "Bread, pastry, and the sausage rolls people queue for — all made in the back."
+        "title": "Delivered before noon",
+        "description": "Order by 9am for same-day delivery anywhere inside the city."
       },
       {
-        "title": "Actually good wifi",
-        "description": "Power at every table and no time limit on your cup."
+        "title": "Arranged by hand",
+        "description": "Every bouquet is tied in the shop — no pre-made bundles from a warehouse."
       }
     ],
-    "galleryTitle": "On the menu",
-    "gallerySubtitle": "Coffee, bread, and the things we make each morning.",
+    "galleryTitle": "This week in the shop",
+    "gallerySubtitle": "Seasonal stems, wrapped and ready to go.",
     "galleryItems": [
       {
-        "label": "Coffee",
-        "title": "Espresso & filter",
-        "description": "A rotating single origin, pulled properly."
+        "label": "Bouquets",
+        "title": "Hand-tied bouquets",
+        "description": "Seasonal stems wrapped the way you'd want to receive them."
       },
       {
-        "label": "Bakery",
-        "title": "Bread & pastry",
-        "description": "Baked in the back before the doors open."
+        "label": "Weddings",
+        "title": "Weddings & events",
+        "description": "Ceremony, table, and buttonhole work, planned with you."
       },
       {
-        "label": "Kitchen",
-        "title": "All-day food",
-        "description": "Toasties, soup, and the sausage rolls people queue for."
+        "label": "Subscriptions",
+        "title": "Standing orders",
+        "description": "Fresh flowers on your desk or counter every week."
       },
       {
-        "label": "Space",
-        "title": "Work-friendly room",
-        "description": "Power at every table and no time limit on your cup."
+        "label": "Plants",
+        "title": "House plants",
+        "description": "Potted greenery that survives an ordinary flat."
       }
     ],
-    "ctaTitle": "7am–4pm daily. Last coffee at 3.45pm.",
-    "ctaButton": "See the menu",
+    "ctaTitle": "Open Tuesday to Sunday, 8am until the flowers run out.",
+    "ctaButton": "Order a bouquet",
     "contactTitle": "Find us",
-    "contactText": "Open daily from 7am. 22 Mill Road, city centre. Free wifi, power at every table.",
-    "primaryColor": "#8a4b26",
-    "secondaryColor": "#976838"
+    "contactText": "Open Tuesday to Sunday, 9am to 6pm. 14 Rose Lane, city centre. Order by 9am for same-day delivery.",
+    "primaryColor": "#be6590",
+    "secondaryColor": "#d98ca8"
   },
   "bindings": {
     "text": {

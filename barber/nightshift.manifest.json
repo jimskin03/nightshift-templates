@@ -1,8 +1,8 @@
 {
   "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
-  "id": "cafe",
-  "name": "Cafe / Kopi Lane",
-  "description": "Warm hospitality template for cafes, bakeries and coffee shops.",
+  "id": "barber",
+  "name": "Barbershop / Sharp & Sons",
+  "description": "Heritage grooming template for barbershops and salons.",
   "version": 2,
   "entry": "index.html",
   "editor": {
@@ -178,57 +178,57 @@
     }
   },
   "defaults": {
-    "brandName": "Kopi Lane",
-    "eyebrow": "Cafe · Coffee shop",
-    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
-    "primaryCta": "See the menu",
-    "secondaryCta": "Find us",
-    "featuresTitle": "On the bar today",
-    "featuresSubtitle": "Why people keep coming back.",
+    "brandName": "Sharp & Sons",
+    "eyebrow": "Barbershop · Salon",
+    "tagline": "Classic cuts, hot-towel shaves, and a chair that's yours for the next half hour.",
+    "primaryCta": "Book a chair",
+    "secondaryCta": "See prices",
+    "featuresTitle": "Cuts & shaves",
+    "featuresSubtitle": "What you get in the chair.",
     "features": [
       {
-        "title": "Roasted weekly",
-        "description": "We pull from a rotating single origin and change it when the bag runs out, not on a schedule."
+        "title": "No appointment needed",
+        "description": "Walk-ins take the next free chair. Book ahead only if you want a specific barber."
       },
       {
-        "title": "Baked here",
-        "description": "Bread, pastry, and the sausage rolls people queue for — all made in the back."
+        "title": "Straight-razor finish",
+        "description": "Every cut ends with a hot towel and a razor line, not a quick tidy with clippers."
       },
       {
-        "title": "Actually good wifi",
-        "description": "Power at every table and no time limit on your cup."
+        "title": "Cash or card",
+        "description": "Flat pricing on the board. No upsells, no product pitch at the till."
       }
     ],
-    "galleryTitle": "On the menu",
-    "gallerySubtitle": "Coffee, bread, and the things we make each morning.",
+    "galleryTitle": "Cuts & shaves",
+    "gallerySubtitle": "Straightforward services, priced on the board.",
     "galleryItems": [
       {
-        "label": "Coffee",
-        "title": "Espresso & filter",
-        "description": "A rotating single origin, pulled properly."
+        "label": "Cuts",
+        "title": "Classic cuts",
+        "description": "Scissor and clipper work, finished with a razor line."
       },
       {
-        "label": "Bakery",
-        "title": "Bread & pastry",
-        "description": "Baked in the back before the doors open."
+        "label": "Shaves",
+        "title": "Hot-towel shaves",
+        "description": "Straight razor, hot towel, no rush."
       },
       {
-        "label": "Kitchen",
-        "title": "All-day food",
-        "description": "Toasties, soup, and the sausage rolls people queue for."
+        "label": "Beards",
+        "title": "Beard trims",
+        "description": "Shaped and tidied, or taken right back."
       },
       {
-        "label": "Space",
-        "title": "Work-friendly room",
-        "description": "Power at every table and no time limit on your cup."
+        "label": "Kids",
+        "title": "Kids' cuts",
+        "description": "Quick, calm, and priced lower."
       }
     ],
-    "ctaTitle": "7am–4pm daily. Last coffee at 3.45pm.",
-    "ctaButton": "See the menu",
+    "ctaTitle": "Tuesday to Saturday, 9am to 7pm. Last cut 30 minutes before close.",
+    "ctaButton": "Book a chair",
     "contactTitle": "Find us",
-    "contactText": "Open daily from 7am. 22 Mill Road, city centre. Free wifi, power at every table.",
-    "primaryColor": "#8a4b26",
-    "secondaryColor": "#976838"
+    "contactText": "Tuesday to Saturday, 9am to 7pm. 8 High Street. Walk-ins welcome, last cut 30 min before close.",
+    "primaryColor": "#1f3a5f",
+    "secondaryColor": "#8d7146"
   },
   "bindings": {
     "text": {

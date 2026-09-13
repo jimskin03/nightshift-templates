@@ -1,8 +1,8 @@
 {
   "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
-  "id": "cafe",
-  "name": "Cafe / Kopi Lane",
-  "description": "Warm hospitality template for cafes, bakeries and coffee shops.",
+  "id": "trades",
+  "name": "Trades & Services / Calloway Plumbing",
+  "description": "Trust-first service template for plumbing, electrical, building and local trades.",
   "version": 2,
   "entry": "index.html",
   "editor": {
@@ -178,57 +178,57 @@
     }
   },
   "defaults": {
-    "brandName": "Kopi Lane",
-    "eyebrow": "Cafe · Coffee shop",
-    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
-    "primaryCta": "See the menu",
-    "secondaryCta": "Find us",
-    "featuresTitle": "On the bar today",
-    "featuresSubtitle": "Why people keep coming back.",
+    "brandName": "Calloway Plumbing",
+    "eyebrow": "Trades · Plumbing, electrical, building",
+    "tagline": "Licensed, insured, and honest about what a job actually costs before we start it.",
+    "primaryCta": "Get a callout",
+    "secondaryCta": "See service areas",
+    "featuresTitle": "What we handle",
+    "featuresSubtitle": "What you get when you call us.",
     "features": [
       {
-        "title": "Roasted weekly",
-        "description": "We pull from a rotating single origin and change it when the bag runs out, not on a schedule."
+        "title": "Quoted before we start",
+        "description": "You get a written price before any work begins. If it changes, we stop and ask first."
       },
       {
-        "title": "Baked here",
-        "description": "Bread, pastry, and the sausage rolls people queue for — all made in the back."
+        "title": "Licensed and insured",
+        "description": "Full public liability cover and licence numbers on every invoice."
       },
       {
-        "title": "Actually good wifi",
-        "description": "Power at every table and no time limit on your cup."
+        "title": "Same-day emergencies",
+        "description": "Burst pipes and dead circuits get seen the same day, including weekends."
       }
     ],
-    "galleryTitle": "On the menu",
-    "gallerySubtitle": "Coffee, bread, and the things we make each morning.",
+    "galleryTitle": "Services we handle",
+    "gallerySubtitle": "Plumbing, electrical, and the jobs nobody else turns up for.",
     "galleryItems": [
       {
-        "label": "Coffee",
-        "title": "Espresso & filter",
-        "description": "A rotating single origin, pulled properly."
+        "label": "Plumbing",
+        "title": "Plumbing",
+        "description": "Leaks, burst pipes, and bathroom installs."
       },
       {
-        "label": "Bakery",
-        "title": "Bread & pastry",
-        "description": "Baked in the back before the doors open."
+        "label": "Electrical",
+        "title": "Electrical",
+        "description": "Consumer units, sockets, and dead circuits."
       },
       {
-        "label": "Kitchen",
-        "title": "All-day food",
-        "description": "Toasties, soup, and the sausage rolls people queue for."
+        "label": "Heating",
+        "title": "Heating",
+        "description": "Boiler servicing, radiators, and thermostats."
       },
       {
-        "label": "Space",
-        "title": "Work-friendly room",
-        "description": "Power at every table and no time limit on your cup."
+        "label": "Emergency",
+        "title": "24/7 emergencies",
+        "description": "Same-day callouts, including weekends."
       }
     ],
-    "ctaTitle": "7am–4pm daily. Last coffee at 3.45pm.",
-    "ctaButton": "See the menu",
+    "ctaTitle": "Emergency callouts 24/7. Standard bookings weekdays 8am to 5pm.",
+    "ctaButton": "Get a callout",
     "contactTitle": "Find us",
-    "contactText": "Open daily from 7am. 22 Mill Road, city centre. Free wifi, power at every table.",
-    "primaryColor": "#8a4b26",
-    "secondaryColor": "#976838"
+    "contactText": "Mon to Fri, 8am to 5pm. Licensed and insured across the metro area. Quotes returned within one day.",
+    "primaryColor": "#14448f",
+    "secondaryColor": "#f59e0b"
   },
   "bindings": {
     "text": {

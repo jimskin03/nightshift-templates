@@ -1,21 +1,29 @@
-# Nightshift live studio manual test checklist
+# Nightshift universal studio manual test checklist
 
-## Static / unauthenticated checks (no live account required)
+## Static checks
 
-- [ ] Serve the repository with `python3 -m http.server 8080` and open `/cafe/studio.html`.
-- [ ] Confirm the page has no console syntax or manifest-load errors.
-- [ ] Confirm the unauthenticated state says **Sign in required**, disables editor/save/publish, and does not write `localStorage`.
-- [ ] Confirm the isolated preview can send READY/ACK messages only from the expected origin/window.
-- [ ] Run `node --check cafe/auth-adapter.js`, `node --check cafe/studio.js`, and `node tests/test_auth_adapter.mjs`.
+- [ ] Serve the repository with `python3 -m http.server 8080` and open `/studio/`.
+- [ ] Confirm the template selector lists Cafe, Florist, Barbershop, Fitness, and Trades & Services.
+- [ ] Open each template and confirm the iframe shows the real template page, not a simplified preview page.
+- [ ] Edit brand, hero, features, gallery, CTA/contact, and theme fields; confirm the iframe updates immediately without reloading.
+- [ ] Add, remove, and reorder feature/gallery items and confirm the live preview follows.
+- [ ] Switch Desktop / Tablet / Mobile and confirm only the preview width changes.
+- [ ] Confirm links/forms inside the preview do not navigate away while editing.
+- [ ] Open `/cafe/studio.html`; confirm it redirects to `/studio/?template=cafe` (or infers the referring template).
 
-## Live authenticated E2E (requires an approved CryptGreg/Supabase account)
+## Authentication / persistence
 
-- [ ] Sign in through the approved CryptGreg flow, then open `/cafe/studio.html`; confirm the user identity and gallery load.
-- [ ] Confirm the quota indicator reflects `nightshift.remaining_creations_today` and Create Cafe is disabled at zero.
-- [ ] Create a Cafe; confirm the UI reports success, selects it, and loads its server draft.
-- [ ] Edit fields, click Save draft, refresh, and confirm the draft is restored from `nightshift.sites` (not browser storage).
-- [ ] Click Publish; confirm the UI reports success and the site status changes to published.
-- [ ] In a second account, verify the first account's site cannot be listed, loaded, saved, or published.
-- [ ] Exercise quota exhaustion and RPC/network failure; confirm clear error states and no false success.
+- [ ] Signed out: editor and live preview remain usable, but Create/Save/Publish are unavailable.
+- [ ] Sign in and confirm My sites lists every template type owned by the account.
+- [ ] Create one site from each template and confirm each receives that template's defaults.
+- [ ] Confirm the quota remains five total creations per UTC day across all template types.
+- [ ] Save a draft, refresh, reload it, and confirm the draft is restored.
+- [ ] Publish and confirm status changes to published and `site_versions` receives a new immutable version.
+- [ ] Delete a site and confirm the creation quota is not restored.
+- [ ] In a second account, confirm the first account's sites cannot be listed, loaded, saved, published, or deleted.
 
-Do not treat static checks as evidence of live authentication, RLS ownership, quota, or RPC success.
+## Failure states
+
+- [ ] Break network access after loading Studio; confirm live preview continues while Save reports failure.
+- [ ] Enter invalid/empty required values; confirm preview still renders the local draft but Save/Publish are blocked with validation errors.
+- [ ] Reload the preview iframe and confirm the current in-memory draft is re-applied automatically.
