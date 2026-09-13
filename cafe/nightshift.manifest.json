@@ -1,0 +1,278 @@
+{
+  "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
+  "id": "cafe",
+  "name": "Cafe / Kopi Lane",
+  "description": "Warm hospitality template for cafes, bakeries and coffee shops.",
+  "version": 2,
+  "entry": "index.html",
+  "editor": {
+    "groups": [
+      "Brand",
+      "Hero",
+      "Features",
+      "Gallery",
+      "Contact & CTA",
+      "Theme"
+    ]
+  },
+  "fields": {
+    "brandName": {
+      "type": "string",
+      "label": "Business name",
+      "group": "Brand",
+      "required": true,
+      "maxLength": 80
+    },
+    "eyebrow": {
+      "type": "string",
+      "label": "Eyebrow",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 80
+    },
+    "tagline": {
+      "type": "textarea",
+      "label": "Hero tagline",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 220,
+      "rows": 3
+    },
+    "primaryCta": {
+      "type": "string",
+      "label": "Primary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "secondaryCta": {
+      "type": "string",
+      "label": "Secondary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "featuresTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Features",
+      "required": true,
+      "maxLength": 90
+    },
+    "featuresSubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Features",
+      "required": true,
+      "maxLength": 160
+    },
+    "features": {
+      "type": "array",
+      "label": "Feature cards",
+      "group": "Features",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "galleryTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 90
+    },
+    "gallerySubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 160
+    },
+    "galleryItems": {
+      "type": "array",
+      "label": "Gallery / service cards",
+      "group": "Gallery",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "label": "Label",
+            "required": true,
+            "maxLength": 40
+          },
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "ctaTitle": {
+      "type": "textarea",
+      "label": "CTA headline",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 180,
+      "rows": 2
+    },
+    "ctaButton": {
+      "type": "string",
+      "label": "CTA button",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 50
+    },
+    "contactTitle": {
+      "type": "string",
+      "label": "Contact heading",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 70
+    },
+    "contactText": {
+      "type": "textarea",
+      "label": "Contact details",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 260,
+      "rows": 3
+    },
+    "primaryColor": {
+      "type": "color",
+      "label": "Primary colour",
+      "group": "Theme",
+      "required": true
+    },
+    "secondaryColor": {
+      "type": "color",
+      "label": "Secondary colour",
+      "group": "Theme",
+      "required": true
+    }
+  },
+  "defaults": {
+    "brandName": "Kopi Lane",
+    "eyebrow": "Cafe · Coffee shop",
+    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
+    "primaryCta": "See the menu",
+    "secondaryCta": "Find us",
+    "featuresTitle": "On the bar today",
+    "featuresSubtitle": "Why people keep coming back.",
+    "features": [
+      {
+        "title": "Roasted weekly",
+        "description": "We pull from a rotating single origin and change it when the bag runs out, not on a schedule."
+      },
+      {
+        "title": "Baked here",
+        "description": "Bread, pastry, and the sausage rolls people queue for — all made in the back."
+      },
+      {
+        "title": "Actually good wifi",
+        "description": "Power at every table and no time limit on your cup."
+      }
+    ],
+    "galleryTitle": "On the menu",
+    "gallerySubtitle": "Coffee, bread, and the things we make each morning.",
+    "galleryItems": [
+      {
+        "label": "Coffee",
+        "title": "Espresso & filter",
+        "description": "A rotating single origin, pulled properly."
+      },
+      {
+        "label": "Bakery",
+        "title": "Bread & pastry",
+        "description": "Baked in the back before the doors open."
+      },
+      {
+        "label": "Kitchen",
+        "title": "All-day food",
+        "description": "Toasties, soup, and the sausage rolls people queue for."
+      },
+      {
+        "label": "Space",
+        "title": "Work-friendly room",
+        "description": "Power at every table and no time limit on your cup."
+      }
+    ],
+    "ctaTitle": "7am–4pm daily. Last coffee at 3.45pm.",
+    "ctaButton": "See the menu",
+    "contactTitle": "Find us",
+    "contactText": "Open daily from 7am. 22 Mill Road, city centre. Free wifi, power at every table.",
+    "primaryColor": "#8a4b26",
+    "secondaryColor": "#976838"
+  },
+  "bindings": {
+    "text": {
+      "brandName": [
+        ".logo",
+        ".hero h1"
+      ],
+      "eyebrow": ".hero .eyebrow",
+      "tagline": ".hero .container > p",
+      "primaryCta": ".hero .actions .btn:nth-child(1)",
+      "secondaryCta": ".hero .actions .btn:nth-child(2)",
+      "featuresTitle": "#features .section-head h2",
+      "featuresSubtitle": "#features .section-head p",
+      "galleryTitle": "#gallery .section-head h2",
+      "gallerySubtitle": "#gallery .section-head p",
+      "ctaTitle": ".cta .cta-box h2",
+      "ctaButton": ".cta .btn",
+      "contactTitle": "#contact .section-head h2",
+      "contactText": "#contact .section-head p"
+    },
+    "cssVars": {
+      "primaryColor": [
+        "--primary-color",
+        "--heading-from-color",
+        "--link-color",
+        "--on-tint-color"
+      ],
+      "secondaryColor": [
+        "--secondary-color",
+        "--heading-to-color",
+        "--link-alt-color"
+      ]
+    },
+    "lists": {
+      "features": {
+        "container": ".features",
+        "kind": "features",
+        "icon": "✦"
+      },
+      "galleryItems": {
+        "container": ".gallery",
+        "kind": "gallery",
+        "linkText": "Find out more"
+      }
+    }
+  }
+}

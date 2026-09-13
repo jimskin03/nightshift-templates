@@ -1,0 +1,278 @@
+{
+  "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
+  "id": "trades",
+  "name": "Trades & Services / Calloway Plumbing",
+  "description": "Trust-first service template for plumbing, electrical, building and local trades.",
+  "version": 2,
+  "entry": "index.html",
+  "editor": {
+    "groups": [
+      "Brand",
+      "Hero",
+      "Features",
+      "Gallery",
+      "Contact & CTA",
+      "Theme"
+    ]
+  },
+  "fields": {
+    "brandName": {
+      "type": "string",
+      "label": "Business name",
+      "group": "Brand",
+      "required": true,
+      "maxLength": 80
+    },
+    "eyebrow": {
+      "type": "string",
+      "label": "Eyebrow",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 80
+    },
+    "tagline": {
+      "type": "textarea",
+      "label": "Hero tagline",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 220,
+      "rows": 3
+    },
+    "primaryCta": {
+      "type": "string",
+      "label": "Primary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "secondaryCta": {
+      "type": "string",
+      "label": "Secondary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "featuresTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Features",
+      "required": true,
+      "maxLength": 90
+    },
+    "featuresSubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Features",
+      "required": true,
+      "maxLength": 160
+    },
+    "features": {
+      "type": "array",
+      "label": "Feature cards",
+      "group": "Features",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "galleryTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 90
+    },
+    "gallerySubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 160
+    },
+    "galleryItems": {
+      "type": "array",
+      "label": "Gallery / service cards",
+      "group": "Gallery",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "label": "Label",
+            "required": true,
+            "maxLength": 40
+          },
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "ctaTitle": {
+      "type": "textarea",
+      "label": "CTA headline",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 180,
+      "rows": 2
+    },
+    "ctaButton": {
+      "type": "string",
+      "label": "CTA button",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 50
+    },
+    "contactTitle": {
+      "type": "string",
+      "label": "Contact heading",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 70
+    },
+    "contactText": {
+      "type": "textarea",
+      "label": "Contact details",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 260,
+      "rows": 3
+    },
+    "primaryColor": {
+      "type": "color",
+      "label": "Primary colour",
+      "group": "Theme",
+      "required": true
+    },
+    "secondaryColor": {
+      "type": "color",
+      "label": "Secondary colour",
+      "group": "Theme",
+      "required": true
+    }
+  },
+  "defaults": {
+    "brandName": "Calloway Plumbing",
+    "eyebrow": "Trades · Plumbing, electrical, building",
+    "tagline": "Licensed, insured, and honest about what a job actually costs before we start it.",
+    "primaryCta": "Get a callout",
+    "secondaryCta": "See service areas",
+    "featuresTitle": "What we handle",
+    "featuresSubtitle": "What you get when you call us.",
+    "features": [
+      {
+        "title": "Quoted before we start",
+        "description": "You get a written price before any work begins. If it changes, we stop and ask first."
+      },
+      {
+        "title": "Licensed and insured",
+        "description": "Full public liability cover and licence numbers on every invoice."
+      },
+      {
+        "title": "Same-day emergencies",
+        "description": "Burst pipes and dead circuits get seen the same day, including weekends."
+      }
+    ],
+    "galleryTitle": "Services we handle",
+    "gallerySubtitle": "Plumbing, electrical, and the jobs nobody else turns up for.",
+    "galleryItems": [
+      {
+        "label": "Plumbing",
+        "title": "Plumbing",
+        "description": "Leaks, burst pipes, and bathroom installs."
+      },
+      {
+        "label": "Electrical",
+        "title": "Electrical",
+        "description": "Consumer units, sockets, and dead circuits."
+      },
+      {
+        "label": "Heating",
+        "title": "Heating",
+        "description": "Boiler servicing, radiators, and thermostats."
+      },
+      {
+        "label": "Emergency",
+        "title": "24/7 emergencies",
+        "description": "Same-day callouts, including weekends."
+      }
+    ],
+    "ctaTitle": "Emergency callouts 24/7. Standard bookings weekdays 8am to 5pm.",
+    "ctaButton": "Get a callout",
+    "contactTitle": "Find us",
+    "contactText": "Mon to Fri, 8am to 5pm. Licensed and insured across the metro area. Quotes returned within one day.",
+    "primaryColor": "#14448f",
+    "secondaryColor": "#f59e0b"
+  },
+  "bindings": {
+    "text": {
+      "brandName": [
+        ".logo",
+        ".hero h1"
+      ],
+      "eyebrow": ".hero .eyebrow",
+      "tagline": ".hero .container > p",
+      "primaryCta": ".hero .actions .btn:nth-child(1)",
+      "secondaryCta": ".hero .actions .btn:nth-child(2)",
+      "featuresTitle": "#features .section-head h2",
+      "featuresSubtitle": "#features .section-head p",
+      "galleryTitle": "#gallery .section-head h2",
+      "gallerySubtitle": "#gallery .section-head p",
+      "ctaTitle": ".cta .cta-box h2",
+      "ctaButton": ".cta .btn",
+      "contactTitle": "#contact .section-head h2",
+      "contactText": "#contact .section-head p"
+    },
+    "cssVars": {
+      "primaryColor": [
+        "--primary-color",
+        "--heading-from-color",
+        "--link-color",
+        "--on-tint-color"
+      ],
+      "secondaryColor": [
+        "--secondary-color",
+        "--heading-to-color",
+        "--link-alt-color"
+      ]
+    },
+    "lists": {
+      "features": {
+        "container": ".features",
+        "kind": "features",
+        "icon": "✦"
+      },
+      "galleryItems": {
+        "container": ".gallery",
+        "kind": "gallery",
+        "linkText": "Find out more"
+      }
+    }
+  }
+}

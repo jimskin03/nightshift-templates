@@ -1,0 +1,278 @@
+{
+  "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
+  "id": "fitness",
+  "name": "Fitness / Iron Room",
+  "description": "High-energy gym template for training clubs, studios and coaches.",
+  "version": 2,
+  "entry": "index.html",
+  "editor": {
+    "groups": [
+      "Brand",
+      "Hero",
+      "Features",
+      "Gallery",
+      "Contact & CTA",
+      "Theme"
+    ]
+  },
+  "fields": {
+    "brandName": {
+      "type": "string",
+      "label": "Business name",
+      "group": "Brand",
+      "required": true,
+      "maxLength": 80
+    },
+    "eyebrow": {
+      "type": "string",
+      "label": "Eyebrow",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 80
+    },
+    "tagline": {
+      "type": "textarea",
+      "label": "Hero tagline",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 220,
+      "rows": 3
+    },
+    "primaryCta": {
+      "type": "string",
+      "label": "Primary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "secondaryCta": {
+      "type": "string",
+      "label": "Secondary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "featuresTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Features",
+      "required": true,
+      "maxLength": 90
+    },
+    "featuresSubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Features",
+      "required": true,
+      "maxLength": 160
+    },
+    "features": {
+      "type": "array",
+      "label": "Feature cards",
+      "group": "Features",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "galleryTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 90
+    },
+    "gallerySubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 160
+    },
+    "galleryItems": {
+      "type": "array",
+      "label": "Gallery / service cards",
+      "group": "Gallery",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "label": "Label",
+            "required": true,
+            "maxLength": 40
+          },
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "ctaTitle": {
+      "type": "textarea",
+      "label": "CTA headline",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 180,
+      "rows": 2
+    },
+    "ctaButton": {
+      "type": "string",
+      "label": "CTA button",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 50
+    },
+    "contactTitle": {
+      "type": "string",
+      "label": "Contact heading",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 70
+    },
+    "contactText": {
+      "type": "textarea",
+      "label": "Contact details",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 260,
+      "rows": 3
+    },
+    "primaryColor": {
+      "type": "color",
+      "label": "Primary colour",
+      "group": "Theme",
+      "required": true
+    },
+    "secondaryColor": {
+      "type": "color",
+      "label": "Secondary colour",
+      "group": "Theme",
+      "required": true
+    }
+  },
+  "defaults": {
+    "brandName": "Iron Room",
+    "eyebrow": "Gym · Personal training",
+    "tagline": "Small-group strength training with a coach on the floor, not a screen on the wall.",
+    "primaryCta": "Start a trial week",
+    "secondaryCta": "See the timetable",
+    "featuresTitle": "How training works",
+    "featuresSubtitle": "How training actually works here.",
+    "features": [
+      {
+        "title": "Coached, not supervised",
+        "description": "A coach writes your programme and corrects your lifts. You are never left with a printout."
+      },
+      {
+        "title": "Six people per session",
+        "description": "Capped group sizes so everyone gets eyes on their form and a rack of their own."
+      },
+      {
+        "title": "Cancel any month",
+        "description": "No twelve-month contract. Pause or leave with a month's notice, no retention call."
+      }
+    ],
+    "galleryTitle": "Sessions & timetable",
+    "gallerySubtitle": "Small groups, coached on the floor, six days a week.",
+    "galleryItems": [
+      {
+        "label": "Strength",
+        "title": "Small-group strength",
+        "description": "Six people per session, coached on the floor."
+      },
+      {
+        "label": "1:1",
+        "title": "Personal training",
+        "description": "A programme written for you and corrected weekly."
+      },
+      {
+        "label": "Conditioning",
+        "title": "Conditioning",
+        "description": "Short, hard sessions that don't wreck your week."
+      },
+      {
+        "label": "Trial",
+        "title": "Trial week",
+        "description": "Seven days on the floor before you commit."
+      }
+    ],
+    "ctaTitle": "Open 6am to 9pm weekdays, 8am to 2pm weekends.",
+    "ctaButton": "Start a trial week",
+    "contactTitle": "Find us",
+    "contactText": "Open 5am to 11pm, seven days. 3 Ironworks Yard. First session on the house.",
+    "primaryColor": "#3ddbb4",
+    "secondaryColor": "#7ef0d2"
+  },
+  "bindings": {
+    "text": {
+      "brandName": [
+        ".logo",
+        ".hero h1"
+      ],
+      "eyebrow": ".hero .eyebrow",
+      "tagline": ".hero .container > p",
+      "primaryCta": ".hero .actions .btn:nth-child(1)",
+      "secondaryCta": ".hero .actions .btn:nth-child(2)",
+      "featuresTitle": "#features .section-head h2",
+      "featuresSubtitle": "#features .section-head p",
+      "galleryTitle": "#gallery .section-head h2",
+      "gallerySubtitle": "#gallery .section-head p",
+      "ctaTitle": ".cta .cta-box h2",
+      "ctaButton": ".cta .btn",
+      "contactTitle": "#contact .section-head h2",
+      "contactText": "#contact .section-head p"
+    },
+    "cssVars": {
+      "primaryColor": [
+        "--primary-color",
+        "--heading-from-color",
+        "--link-color",
+        "--on-tint-color"
+      ],
+      "secondaryColor": [
+        "--secondary-color",
+        "--heading-to-color",
+        "--link-alt-color"
+      ]
+    },
+    "lists": {
+      "features": {
+        "container": ".features",
+        "kind": "features",
+        "icon": "✦"
+      },
+      "galleryItems": {
+        "container": ".gallery",
+        "kind": "gallery",
+        "linkText": "Find out more"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Nightshift Studio</title>
+  <script>
+    (() => {
+      const allowed = ['cafe', 'florist', 'barber', 'fitness', 'trades'];
+      let template = 'cafe';
+      try {
+        const ref = new URL(document.referrer || location.origin);
+        const match = ref.pathname.match(/^\/(cafe|florist|barber|fitness|trades)(?:\/|$)/);
+        if (match && allowed.includes(match[1])) template = match[1];
+      } catch (_) { /* default to Cafe for old bookmarks */ }
+      location.replace(`/studio/?template=${encodeURIComponent(template)}`);
+    })();
+  </script>
+</head>
+<body><p>Opening Nightshift Studio…</p></body>
+</html>

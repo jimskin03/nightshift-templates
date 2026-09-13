@@ -1,0 +1,278 @@
+{
+  "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
+  "id": "barber",
+  "name": "Barbershop / Sharp & Sons",
+  "description": "Heritage grooming template for barbershops and salons.",
+  "version": 2,
+  "entry": "index.html",
+  "editor": {
+    "groups": [
+      "Brand",
+      "Hero",
+      "Features",
+      "Gallery",
+      "Contact & CTA",
+      "Theme"
+    ]
+  },
+  "fields": {
+    "brandName": {
+      "type": "string",
+      "label": "Business name",
+      "group": "Brand",
+      "required": true,
+      "maxLength": 80
+    },
+    "eyebrow": {
+      "type": "string",
+      "label": "Eyebrow",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 80
+    },
+    "tagline": {
+      "type": "textarea",
+      "label": "Hero tagline",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 220,
+      "rows": 3
+    },
+    "primaryCta": {
+      "type": "string",
+      "label": "Primary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "secondaryCta": {
+      "type": "string",
+      "label": "Secondary button",
+      "group": "Hero",
+      "required": true,
+      "maxLength": 50
+    },
+    "featuresTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Features",
+      "required": true,
+      "maxLength": 90
+    },
+    "featuresSubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Features",
+      "required": true,
+      "maxLength": 160
+    },
+    "features": {
+      "type": "array",
+      "label": "Feature cards",
+      "group": "Features",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "galleryTitle": {
+      "type": "string",
+      "label": "Section title",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 90
+    },
+    "gallerySubtitle": {
+      "type": "string",
+      "label": "Section subtitle",
+      "group": "Gallery",
+      "required": true,
+      "maxLength": 160
+    },
+    "galleryItems": {
+      "type": "array",
+      "label": "Gallery / service cards",
+      "group": "Gallery",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "label": "Label",
+            "required": true,
+            "maxLength": 40
+          },
+          "title": {
+            "type": "string",
+            "label": "Title",
+            "required": true,
+            "maxLength": 70
+          },
+          "description": {
+            "type": "textarea",
+            "label": "Description",
+            "required": true,
+            "maxLength": 220,
+            "rows": 2
+          }
+        }
+      }
+    },
+    "ctaTitle": {
+      "type": "textarea",
+      "label": "CTA headline",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 180,
+      "rows": 2
+    },
+    "ctaButton": {
+      "type": "string",
+      "label": "CTA button",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 50
+    },
+    "contactTitle": {
+      "type": "string",
+      "label": "Contact heading",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 70
+    },
+    "contactText": {
+      "type": "textarea",
+      "label": "Contact details",
+      "group": "Contact & CTA",
+      "required": true,
+      "maxLength": 260,
+      "rows": 3
+    },
+    "primaryColor": {
+      "type": "color",
+      "label": "Primary colour",
+      "group": "Theme",
+      "required": true
+    },
+    "secondaryColor": {
+      "type": "color",
+      "label": "Secondary colour",
+      "group": "Theme",
+      "required": true
+    }
+  },
+  "defaults": {
+    "brandName": "Sharp & Sons",
+    "eyebrow": "Barbershop · Salon",
+    "tagline": "Classic cuts, hot-towel shaves, and a chair that's yours for the next half hour.",
+    "primaryCta": "Book a chair",
+    "secondaryCta": "See prices",
+    "featuresTitle": "Cuts & shaves",
+    "featuresSubtitle": "What you get in the chair.",
+    "features": [
+      {
+        "title": "No appointment needed",
+        "description": "Walk-ins take the next free chair. Book ahead only if you want a specific barber."
+      },
+      {
+        "title": "Straight-razor finish",
+        "description": "Every cut ends with a hot towel and a razor line, not a quick tidy with clippers."
+      },
+      {
+        "title": "Cash or card",
+        "description": "Flat pricing on the board. No upsells, no product pitch at the till."
+      }
+    ],
+    "galleryTitle": "Cuts & shaves",
+    "gallerySubtitle": "Straightforward services, priced on the board.",
+    "galleryItems": [
+      {
+        "label": "Cuts",
+        "title": "Classic cuts",
+        "description": "Scissor and clipper work, finished with a razor line."
+      },
+      {
+        "label": "Shaves",
+        "title": "Hot-towel shaves",
+        "description": "Straight razor, hot towel, no rush."
+      },
+      {
+        "label": "Beards",
+        "title": "Beard trims",
+        "description": "Shaped and tidied, or taken right back."
+      },
+      {
+        "label": "Kids",
+        "title": "Kids' cuts",
+        "description": "Quick, calm, and priced lower."
+      }
+    ],
+    "ctaTitle": "Tuesday to Saturday, 9am to 7pm. Last cut 30 minutes before close.",
+    "ctaButton": "Book a chair",
+    "contactTitle": "Find us",
+    "contactText": "Tuesday to Saturday, 9am to 7pm. 8 High Street. Walk-ins welcome, last cut 30 min before close.",
+    "primaryColor": "#1f3a5f",
+    "secondaryColor": "#8d7146"
+  },
+  "bindings": {
+    "text": {
+      "brandName": [
+        ".logo",
+        ".hero h1"
+      ],
+      "eyebrow": ".hero .eyebrow",
+      "tagline": ".hero .container > p",
+      "primaryCta": ".hero .actions .btn:nth-child(1)",
+      "secondaryCta": ".hero .actions .btn:nth-child(2)",
+      "featuresTitle": "#features .section-head h2",
+      "featuresSubtitle": "#features .section-head p",
+      "galleryTitle": "#gallery .section-head h2",
+      "gallerySubtitle": "#gallery .section-head p",
+      "ctaTitle": ".cta .cta-box h2",
+      "ctaButton": ".cta .btn",
+      "contactTitle": "#contact .section-head h2",
+      "contactText": "#contact .section-head p"
+    },
+    "cssVars": {
+      "primaryColor": [
+        "--primary-color",
+        "--heading-from-color",
+        "--link-color",
+        "--on-tint-color"
+      ],
+      "secondaryColor": [
+        "--secondary-color",
+        "--heading-to-color",
+        "--link-alt-color"
+      ]
+    },
+    "lists": {
+      "features": {
+        "container": ".features",
+        "kind": "features",
+        "icon": "✦"
+      },
+      "galleryItems": {
+        "container": ".gallery",
+        "kind": "gallery",
+        "linkText": "Find out more"
+      }
+    }
+  }
+}
