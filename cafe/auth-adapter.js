@@ -25,7 +25,7 @@
     const config = runtimeConfig();
     const request = options.fetchImpl || window.fetch.bind(window);
     const headers = () => {
-    const base = { apikey: config.publishableKey, Accept: 'application/json', 'Content-Type': 'application/json' };
+    const base = { apikey: config.publishableKey, Accept: 'application/json', 'Content-Type': 'application/json', 'Accept-Profile': 'nightshift', 'Content-Profile': 'nightshift' };
     const match = (typeof document !== 'undefined' && document.cookie) ? document.cookie.match(/sb-[a-z0-9]+-auth-token=([^;]+)/) : null;
     if (match) {
       try {
