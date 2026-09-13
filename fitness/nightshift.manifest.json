@@ -1,8 +1,8 @@
 {
   "$schema": "https://nightshift.local/schema/template-manifest.v2.json",
-  "id": "cafe",
-  "name": "Cafe / Kopi Lane",
-  "description": "Warm hospitality template for cafes, bakeries and coffee shops.",
+  "id": "fitness",
+  "name": "Fitness / Iron Room",
+  "description": "High-energy gym template for training clubs, studios and coaches.",
   "version": 2,
   "entry": "index.html",
   "editor": {
@@ -178,57 +178,57 @@
     }
   },
   "defaults": {
-    "brandName": "Kopi Lane",
-    "eyebrow": "Cafe · Coffee shop",
-    "tagline": "Single-origin espresso, bread baked in-house, and a room that doesn't mind if you stay.",
-    "primaryCta": "See the menu",
-    "secondaryCta": "Find us",
-    "featuresTitle": "On the bar today",
-    "featuresSubtitle": "Why people keep coming back.",
+    "brandName": "Iron Room",
+    "eyebrow": "Gym · Personal training",
+    "tagline": "Small-group strength training with a coach on the floor, not a screen on the wall.",
+    "primaryCta": "Start a trial week",
+    "secondaryCta": "See the timetable",
+    "featuresTitle": "How training works",
+    "featuresSubtitle": "How training actually works here.",
     "features": [
       {
-        "title": "Roasted weekly",
-        "description": "We pull from a rotating single origin and change it when the bag runs out, not on a schedule."
+        "title": "Coached, not supervised",
+        "description": "A coach writes your programme and corrects your lifts. You are never left with a printout."
       },
       {
-        "title": "Baked here",
-        "description": "Bread, pastry, and the sausage rolls people queue for — all made in the back."
+        "title": "Six people per session",
+        "description": "Capped group sizes so everyone gets eyes on their form and a rack of their own."
       },
       {
-        "title": "Actually good wifi",
-        "description": "Power at every table and no time limit on your cup."
+        "title": "Cancel any month",
+        "description": "No twelve-month contract. Pause or leave with a month's notice, no retention call."
       }
     ],
-    "galleryTitle": "On the menu",
-    "gallerySubtitle": "Coffee, bread, and the things we make each morning.",
+    "galleryTitle": "Sessions & timetable",
+    "gallerySubtitle": "Small groups, coached on the floor, six days a week.",
     "galleryItems": [
       {
-        "label": "Coffee",
-        "title": "Espresso & filter",
-        "description": "A rotating single origin, pulled properly."
+        "label": "Strength",
+        "title": "Small-group strength",
+        "description": "Six people per session, coached on the floor."
       },
       {
-        "label": "Bakery",
-        "title": "Bread & pastry",
-        "description": "Baked in the back before the doors open."
+        "label": "1:1",
+        "title": "Personal training",
+        "description": "A programme written for you and corrected weekly."
       },
       {
-        "label": "Kitchen",
-        "title": "All-day food",
-        "description": "Toasties, soup, and the sausage rolls people queue for."
+        "label": "Conditioning",
+        "title": "Conditioning",
+        "description": "Short, hard sessions that don't wreck your week."
       },
       {
-        "label": "Space",
-        "title": "Work-friendly room",
-        "description": "Power at every table and no time limit on your cup."
+        "label": "Trial",
+        "title": "Trial week",
+        "description": "Seven days on the floor before you commit."
       }
     ],
-    "ctaTitle": "7am–4pm daily. Last coffee at 3.45pm.",
-    "ctaButton": "See the menu",
+    "ctaTitle": "Open 6am to 9pm weekdays, 8am to 2pm weekends.",
+    "ctaButton": "Start a trial week",
     "contactTitle": "Find us",
-    "contactText": "Open daily from 7am. 22 Mill Road, city centre. Free wifi, power at every table.",
-    "primaryColor": "#8a4b26",
-    "secondaryColor": "#976838"
+    "contactText": "Open 5am to 11pm, seven days. 3 Ironworks Yard. First session on the house.",
+    "primaryColor": "#3ddbb4",
+    "secondaryColor": "#7ef0d2"
   },
   "bindings": {
     "text": {

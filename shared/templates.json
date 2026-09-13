@@ -1,0 +1,7 @@
+[
+  {"slug":"cafe","name":"Cafe","category":"Food & Hospitality","manifest":"/cafe/nightshift.manifest.json"},
+  {"slug":"florist","name":"Florist","category":"Lifestyle & Retail","manifest":"/florist/nightshift.manifest.json"},
+  {"slug":"barber","name":"Barbershop","category":"Services","manifest":"/barber/nightshift.manifest.json"},
+  {"slug":"fitness","name":"Fitness","category":"Lifestyle","manifest":"/fitness/nightshift.manifest.json"},
+  {"slug":"trades","name":"Trades & Services","category":"Services","manifest":"/trades/nightshift.manifest.json"}
+]
