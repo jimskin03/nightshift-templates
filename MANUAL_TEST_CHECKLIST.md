@@ -15,11 +15,13 @@
 
 - [ ] Signed out: editor and live preview remain usable, but Create/Save/Publish are unavailable.
 - [ ] Sign in and confirm My sites lists every template type owned by the account.
+- [ ] Confirm the Studio shows `0 of 5 saved sites used` with no saved sites.
 - [ ] Create one site from each template and confirm each receives that template's defaults.
-- [ ] Confirm the quota remains five total creations per UTC day across all template types.
+- [ ] Confirm the limit is five currently saved sites across all template types.
 - [ ] Save a draft, refresh, reload it, and confirm the draft is restored.
 - [ ] Publish and confirm status changes to published and `site_versions` receives a new immutable version.
-- [ ] Delete a site and confirm the creation quota is not restored.
+- [ ] Delete a site and confirm a slot is immediately available again.
+- [ ] Confirm historical `site_creation_events` rows do not consume saved-site slots.
 - [ ] In a second account, confirm the first account's sites cannot be listed, loaded, saved, published, or deleted.
 
 ## Failure states

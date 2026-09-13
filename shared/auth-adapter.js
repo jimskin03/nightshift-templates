@@ -114,11 +114,17 @@
           body: JSON.stringify({ p_template_slug: templateSlug, p_site_name: siteName })
         }, 'Create site');
       },
-      async remainingCreationsToday() {
-        const result = await call('/rest/v1/rpc/remaining_creations_today', { method: 'POST', body: '{}' }, 'Quota check');
+      async remainingSiteSlots() {
+        const result = await call('/rest/v1/rpc/remaining_site_slots', { method: 'POST', body: '{}' }, 'Saved site limit check');
         const value = Array.isArray(result) ? result[0] : result;
-        return typeof value === 'object' && value !== null && 'remaining_today' in value ? value.remaining_today : value;
+        if (typeof value === 'object' && value !== null) {
+          if ('remaining_site_slots' in value) return value.remaining_site_slots;
+          if ('remaining_today' in value) return value.remaining_today;
+        }
+        return value;
       },
+      // Backwards-compatible method for older callers; the RPC now uses saved-site semantics.
+      async remainingCreationsToday() { return this.remainingSiteSlots(); },
       async save(siteId, draft, templateVersion = null) {
         const payload = { draft_data: draft };
         if (Number.isInteger(templateVersion) && templateVersion > 0) payload.template_version = templateVersion;

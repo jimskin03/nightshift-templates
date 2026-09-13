@@ -5,7 +5,7 @@
     registry: [], manifests: new Map(), manifest: null, templateSlug: null,
     config: {}, savedConfig: {}, currentSite: null, sites: [],
     adapter: null, user: null, previewReady: false, previewTemplate: null,
-    previewFrameToken: 0, dirty: false, remainingQuota: null
+    previewFrameToken: 0, dirty: false, remainingSiteSlots: null
   };
 
   const announce = message => { $('notice').textContent = message; };
@@ -21,7 +21,7 @@
     $('save').disabled = !enabled;
     $('publish').disabled = !enabled;
     $('delete-site').disabled = !enabled;
-    $('create-site').disabled = !state.user || state.remainingQuota === 0;
+    $('create-site').disabled = !state.user || state.remainingSiteSlots === null || state.remainingSiteSlots === 0;
   };
 
   async function loadRegistry() {
@@ -277,15 +277,18 @@
   }
 
   async function updateQuota() {
-    if (!state.user) { state.remainingQuota = null; $('quota').textContent = 'Sign in to create saved sites.'; $('create-site').disabled = true; return; }
+    if (!state.user) { state.remainingSiteSlots = null; $('quota').textContent = 'Sign in to create saved sites.'; $('create-site').disabled = true; return; }
     try {
-      const remaining = await state.adapter.remainingCreationsToday();
-      state.remainingQuota = Number(remaining);
-      $('quota').textContent = `${remaining} of 5 site creations remaining today`;
-      $('create-site').disabled = state.remainingQuota <= 0;
+      const remaining = await state.adapter.remainingSiteSlots();
+      state.remainingSiteSlots = Number(remaining);
+      const used = Math.max(0, 5 - state.remainingSiteSlots);
+      $('quota').textContent = state.remainingSiteSlots === 0
+        ? `${used} of 5 saved sites used · Delete a site to create another.`
+        : `${used} of 5 saved sites used`;
+      $('create-site').disabled = state.remainingSiteSlots <= 0;
     } catch (error) {
-      state.remainingQuota = null;
-      $('quota').textContent = `Quota unavailable: ${apiMessage(error)}`;
+      state.remainingSiteSlots = null;
+      $('quota').textContent = `Saved site limit unavailable: ${apiMessage(error)}`;
       $('create-site').disabled = true;
     }
   }
@@ -382,7 +385,7 @@
   $('delete-site').addEventListener('click', async () => {
     if (!state.currentSite || !confirm(`Delete ${state.currentSite.name}? This cannot be undone.`)) return;
     const id = state.currentSite.id; $('delete-site').disabled = true; announce('Deleting site…');
-    try { await state.adapter.deleteSite(id); state.currentSite = null; await loadSites(); await setTemplate(state.templateSlug); announce('Site deleted. Creation quota is unchanged.'); }
+    try { await state.adapter.deleteSite(id); state.currentSite = null; await loadSites(); await setTemplate(state.templateSlug); announce('Site deleted. You can create another saved site.'); }
     catch (error) { showError(apiMessage(error)); announce(`Delete failed: ${apiMessage(error)}`); }
     finally { setPersistenceEnabled(); }
   });

@@ -10,7 +10,7 @@ Each template owns a `nightshift.manifest.json` containing its editor schema, de
 
 ## Backend
 
-Supabase migration `0003_universal_templates.sql` adds the template catalog and replaces the original Cafe-only creation constraint/function while preserving the existing global five-site-per-day quota and append-only creation ledger.
+Supabase migrations `0003_universal_templates.sql` and `0004_saved_site_limit.sql` add the template catalog, make every vertical creatable, and enforce a maximum of five currently saved sites per account. The creation ledger remains append-only for audit history, but it no longer controls the limit.
 
 ## Local preview
 
