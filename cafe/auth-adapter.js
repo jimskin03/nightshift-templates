@@ -38,8 +38,12 @@
     return base;
   };
     const call = async (path, init = {}, label = 'Request') => {
+      const method = (init.method || 'GET').toUpperCase();
+      const profileHeaders = method === 'GET' || method === 'HEAD'
+        ? { 'Accept-Profile': 'nightshift' }
+        : { 'Accept-Profile': 'nightshift', 'Content-Profile': 'nightshift' };
       const response = await request(`${config.supabaseUrl}${path}`, {
-        credentials: 'omit', ...init, headers: { ...headers(), ...(init.headers || {}) }
+        credentials: 'omit', ...init, headers: { ...headers(), ...profileHeaders, ...(init.headers || {}) }
       });
       if (!response.ok) throw await responseError(response, `${label} failed`);
       if (response.status === 204) return null;
